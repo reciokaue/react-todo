@@ -5,9 +5,8 @@ import { NoTasks } from './components/NoTasks'
 import { SearchBar } from './components/SearchBar'
 import { Task } from './components/Task'
 import { TaskHeader } from './components/TaskHeader'
-import { Check } from '@phosphor-icons/react'
 
-interface ITask {
+export interface ITask {
   id: number;
   paragraph: string
   checked: boolean
@@ -25,6 +24,17 @@ function App() {
 
     setTasks([...tasks, newTask])
   }
+  function handleRemoveTask(id: number){
+    const newTasks = tasks.filter((task) => task.id == id)
+    setTasks(newTasks)
+  }
+  function handleToggleCheck(id: number){
+    const newTasks = tasks.map((task: ITask) => {
+      if(id == task.id) return {...task, checked: !task.checked}
+      else return task
+    })
+    setTasks(newTasks)
+  }
 
   return (
     <main>
@@ -32,10 +42,20 @@ function App() {
         <img src={Logo}/>
       </header>
       <section className={styles.section}>
-        <SearchBar/>
+        <SearchBar addTask={handleAddTask}/>
         <TaskHeader/>
-        <NoTasks/>
-        <Task/>
+        {tasks.length == 0?
+          <NoTasks/>
+          :
+          tasks.map((task) => (
+            <Task 
+              key={task.id}
+              data={task} 
+              removeTask={handleRemoveTask}
+              toggleTaskStatus={handleToggleCheck}
+            />
+          ))
+        }
       </section>
     </main>
   )

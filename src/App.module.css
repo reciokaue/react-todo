@@ -8,9 +8,9 @@
 
 .section {
   display: flex;
+  flex: 1;
   align-items: flex-start;
   flex-direction: column;
   max-width: 37.875rem;
-  width: 100%;
   margin: 0 auto;
 }

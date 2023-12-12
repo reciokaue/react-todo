@@ -1,0 +1,36 @@
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+  
+  width: 100%;
+  margin-top: -1.6875rem;
+  height: 3.375rem;
+}
+.input {
+  background: transparent;
+  border: none;
+  outline: none;
+  width: 100%;
+  color: #F1F1F1;
+
+  background: #262626;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+.input::placeholder {
+  color: #808080;
+}
+.button {
+  display: flex;
+  padding: 16px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border-radius: 8px;
+  background: var(--Blue-Dark, #1E6F9F);
+  color: #FFF;
+  border: 0;
+  cursor: pointer;
+}

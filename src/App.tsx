@@ -25,7 +25,7 @@ function App() {
     setTasks([...tasks, newTask])
   }
   function handleRemoveTask(id: number){
-    const newTasks = tasks.filter((task) => task.id == id)
+    const newTasks = tasks.filter((task) => task.id != id)
     setTasks(newTasks)
   }
   function handleToggleCheck(id: number){

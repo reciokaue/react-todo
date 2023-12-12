@@ -29,7 +29,7 @@ export function SearchBar({ addTask }: Props){
         className={styles.button}
       >
         Criar
-        <PlusCircle/>
+        <PlusCircle size={22}/>
       </button>
     </div>
   )

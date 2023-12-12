@@ -43,7 +43,7 @@ function App() {
       </header>
       <section className={styles.section}>
         <SearchBar addTask={handleAddTask}/>
-        <TaskHeader/>
+        <TaskHeader tasks={tasks}/>
         {tasks.length == 0?
           <NoTasks/>
           :

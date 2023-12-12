@@ -13,4 +13,5 @@
   flex-direction: column;
   max-width: 37.875rem;
   margin: 0 auto;
+  gap: 0.5rem
 }
